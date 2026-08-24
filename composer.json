@@ -1,0 +1,36 @@
+{
+    "name": "realuptime/errors",
+    "description": "RealUptime Errors: minimal PHP/Laravel application error tracking SDK. Zero runtime dependencies beyond ext-json and ext-curl.",
+    "type": "library",
+    "version": "0.1.0",
+    "license": "MIT",
+    "keywords": [
+        "error-tracking",
+        "errors",
+        "laravel",
+        "monitoring",
+        "realuptime"
+    ],
+    "homepage": "https://github.com/RealUptimeHQ/realuptime-errors-php",
+    "require": {
+        "php": "^8.1",
+        "ext-json": "*",
+        "ext-curl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "RealUptime\\Errors\\": "src/"
+        },
+        "files": [
+            "src/functions.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RealUptime\\Errors\\Laravel\\ErrorsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable"
+}
