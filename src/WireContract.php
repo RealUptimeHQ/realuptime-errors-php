@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace RealUptime\Errors;
 
 /**
- * The Errors wire contract (docs/errors-plan.md, "The SDKs: two languages,
+ * The Errors wire contract (the internal-docs repo's errors-plan.md, "The SDKs: two languages,
  * one contract"), ported from packages/errors-js/types.ts. DUPLICATED, not
  * imported, same convention as the JS and Python SDKs: this package ships
  * into customer processes and its dependency graph must stay auditable at

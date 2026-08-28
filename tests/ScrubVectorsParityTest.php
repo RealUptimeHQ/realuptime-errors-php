@@ -9,7 +9,7 @@ use RealUptime\Errors\Event;
 use RealUptime\Errors\Scrub;
 
 /**
- * Drives the SHARED scrub vectors (docs/errors-plan.md, "The SDKs: two
+ * Drives the SHARED scrub vectors (the internal-docs repo's errors-plan.md, "The SDKs: two
  * languages, one contract") against this SDK's scrub implementation, the
  * same convention as packages/errors-js/scrub.test.ts and
  * packages/errors-py/tests/test_scrub.py.

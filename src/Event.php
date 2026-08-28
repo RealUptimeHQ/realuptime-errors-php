@@ -63,7 +63,7 @@ final class Event
             $headers = [];
             foreach ($out['headers'] as $name => $value) {
                 $lower = strtolower((string) $name);
-                if (in_array($lower, Scrub::REMOVED_HEADERS, true) && !isset($allowed[$lower])) {
+                if ((in_array($lower, Scrub::REMOVED_HEADERS, true) || Scrub::isKeyDenylisted($lower)) && !isset($allowed[$lower])) {
                     $headers[$name] = Scrub::SCRUBBED;
                 } else {
                     $headers[$name] = is_string($value) ? Scrub::scrubString($value) : $value;

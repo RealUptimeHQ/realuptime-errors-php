@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace RealUptime\Errors;
 
 /**
- * realuptime-errors: minimal PHP error tracking SDK (docs/errors-plan.md,
+ * realuptime-errors: minimal PHP error tracking SDK (the internal-docs repo's errors-plan.md,
  * REA-255). One wire contract with the JS and Python SDKs
  * (packages/errors-js/types.ts); the shared scrub vectors
  * (scrub-vectors.json, vendored here byte-for-byte) pin all three SDKs and
