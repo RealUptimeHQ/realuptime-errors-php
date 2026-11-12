@@ -10,13 +10,13 @@ namespace RealUptime\Errors;
  * whatever handler was previously registered (if any), matching every
  * other language's "capture, then re-raise/re-dispatch" convention in this
  * repo. For frameworks, prefer the framework-specific integration
- * (Laravel: LaravelServiceProvider) — this helper is for scripts, cron
+ * (Laravel: LaravelServiceProvider), this helper is for scripts, cron
  * jobs, and anything with no framework exception pipeline of its own.
  *
  * Usage:
  *
  *     require 'vendor/autoload.php';
- *     \RealUptime\Errors\Client::init(dsn: 'https://realuptime.io/api/errors/v1/ingest/rue_...');
+ *     \RealUptime\Errors\Client::init(dsn: 'https://ingest.realuptime.io/api/errors/v1/ingest/rue_...');
  *     \RealUptime\Errors\install_exception_handler();
  *
  * Never throws: a failure while capturing or while calling the previous

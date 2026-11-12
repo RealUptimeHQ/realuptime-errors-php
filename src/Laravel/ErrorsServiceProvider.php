@@ -14,9 +14,9 @@ use RealUptime\Errors\Client;
  * Wires into Laravel's own exception pipeline rather than adding a second
  * one: it decorates the framework's bound ExceptionHandlerContract so
  * every exception Laravel itself reports (`report()`) is also captured
- * here, then delegates back to the original handler unchanged — the same
+ * here, then delegates back to the original handler unchanged, the same
  * "observe, never replace" shape the JS/Python adapters use (see
- * packages/errors-py/adapters/README-flask.md's design notes).
+ * errors-py/adapters/README-flask.md's design notes).
  *
  * Also listens for `Illuminate\Queue\Events\JobFailed` (the queue job
  * hook this SDK ships): a job that exhausts its retries and fails is an

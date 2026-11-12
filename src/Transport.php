@@ -6,7 +6,7 @@ namespace RealUptime\Errors;
 
 /**
  * Delivery: batched, buffered, backed off, and incapable of crashing the
- * host app. Ported from packages/errors-js/client.ts; same disciplines:
+ * host app. Ported from errors-js/client.ts; same disciplines:
  *
  *   - Failures never throw out of the SDK. Everything is caught; the first
  *     failure of each kind logs ONCE and further ones are silent.

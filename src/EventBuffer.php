@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace RealUptime\Errors;
 
 /**
- * Bounded in-memory event buffer, ported from packages/errors-js/buffer.ts:
+ * Bounded in-memory event buffer, ported from errors-js/buffer.ts:
  * oldest dropped when full, every drop counted, and the count is reported
  * on the NEXT successful batch (`droppedClient` on the wire) so even
  * client-side drops reach the product's visible drop counters. In-memory

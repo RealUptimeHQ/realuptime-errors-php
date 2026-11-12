@@ -7,7 +7,7 @@ namespace RealUptime\Errors;
 /**
  * realuptime-errors: minimal PHP error tracking SDK (the internal-docs repo's errors-plan.md,
  * REA-255). One wire contract with the JS and Python SDKs
- * (packages/errors-js/types.ts); the shared scrub vectors
+ * (errors-js/types.ts); the shared scrub vectors
  * (scrub-vectors.json, vendored here byte-for-byte) pin all three SDKs and
  * the server's second net to identical scrubbing.
  *
@@ -18,7 +18,7 @@ namespace RealUptime\Errors;
  * Usage:
  *
  *     $errors = new \RealUptime\Errors\Client(
- *         dsn: 'https://realuptime.io/api/errors/v1/ingest/rue_...',
+ *         dsn: 'https://ingest.realuptime.io/api/errors/v1/ingest/rue_...',
  *         release: 'v2.4.1',
  *         environment: 'production',
  *     );

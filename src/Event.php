@@ -6,7 +6,7 @@ namespace RealUptime\Errors;
 
 /**
  * Scrubs one wire event before it is serialized, ported from
- * packages/errors-js/scrub.ts's `scrubEvent`. Returns a new array; the
+ * errors-js/scrub.ts's `scrubEvent`. Returns a new array; the
  * input is never mutated.
  *
  * v2 fields are touched only when PRESENT: a v1 event goes through here and

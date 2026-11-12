@@ -40,7 +40,7 @@ final class ClientTest extends TestCase
 
         $this->assertCount(1, $sent);
         $batch = $sent[0];
-        $this->assertSame('realuptime-errors-php/0.1.0', explode('/', $batch['sdk'])[0] . '/' . explode('/', $batch['sdk'])[1]);
+        $this->assertSame('realuptime-errors-php/' . \RealUptime\Errors\WireContract::SDK_VERSION, explode('/', $batch['sdk'])[0] . '/' . explode('/', $batch['sdk'])[1]);
         $event = $batch['events'][0];
         $this->assertSame('token [scrubbed] rejected', $event['message']);
         $this->assertSame('RuntimeException', $event['exceptionType']);

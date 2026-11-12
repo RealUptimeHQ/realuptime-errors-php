@@ -11,7 +11,7 @@ use RealUptime\Errors\WireContract;
 
 /**
  * Pins the wire contract, the apps/agent/wire-contract.test.ts convention
- * ported to PHP: every limit mirrored from packages/errors-js/types.ts,
+ * ported to PHP: every limit mirrored from errors-js/types.ts,
  * and the batch/event field-name shape a v1 payload must keep.
  */
 final class WireContractTest extends TestCase

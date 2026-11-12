@@ -6,7 +6,7 @@ namespace RealUptime\Errors;
 
 /**
  * The Errors wire contract (the internal-docs repo's errors-plan.md, "The SDKs: two languages,
- * one contract"), ported from packages/errors-js/types.ts. DUPLICATED, not
+ * one contract"), ported from errors-js/types.ts. DUPLICATED, not
  * imported, same convention as the JS and Python SDKs: this package ships
  * into customer processes and its dependency graph must stay auditable at
  * a glance. tests/WireContractTest.php pins every constant against the
@@ -15,7 +15,7 @@ namespace RealUptime\Errors;
 final class WireContract
 {
     public const SDK_NAME = 'realuptime-errors-php';
-    public const SDK_VERSION = '0.1.0';
+    public const SDK_VERSION = '0.1.0'; // x-release-please-version
 
     public const MAX_EVENTS_PER_BATCH = 50;
     public const MAX_MESSAGE_LENGTH = 4000;
@@ -25,7 +25,7 @@ final class WireContract
     public const MAX_BREADCRUMB_DATA_ENTRIES = 10;
     public const BUFFER_MAX = 200;
 
-    // v2 (REA-182) caps, mirrored from packages/errors-js/types.ts.
+    // v2 (REA-182) caps, mirrored from errors-js/types.ts.
     public const MAX_TAGS_PER_EVENT = 20;
     public const MAX_CONTEXT_ENTRIES = 20;
     public const MAX_CONTEXT_KEY_LENGTH = 64;

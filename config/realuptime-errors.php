@@ -8,7 +8,7 @@ declare(strict_types=1);
  *     php artisan vendor:publish --tag=realuptime-errors-config
  *
  * or set REALUPTIME_ERRORS_DSN (and friends) in .env and skip publishing
- * entirely — every key below reads from the environment with a safe
+ * entirely, every key below reads from the environment with a safe
  * default.
  */
 return [

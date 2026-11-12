@@ -7,7 +7,7 @@ namespace RealUptime\Errors;
 /**
  * PII scrub-by-default, client-side (the internal-docs repo's errors-plan.md, "PII
  * scrub-by-default, specified"). Ported byte-for-byte from
- * packages/errors-js/scrub.ts and packages/errors-py/realuptime_errors.py;
+ * errors-js/scrub.ts and errors-py/realuptime_errors.py;
  * the shared vectors in scrub-vectors.json (vendored into this package,
  * tests/ScrubVectorsParityTest.php pins it byte-equal to the JS source of
  * truth) pin all three SDKs and the server's second net to identical
@@ -42,9 +42,9 @@ final class Scrub
     private const CARD_RE = '/(?<!\d)(?:\d[ -]?){12,18}\d(?!\d)/';
     private const HEX_RE = '/\b[0-9a-fA-F]{32,}\b/';
     private const BASE64_RE = '/(?<![A-Za-z0-9+_=-])[A-Za-z0-9+_-]{40,}={0,2}/';
-    private const URL_CREDS_RE = '#\b([a-zA-Z][a-zA-Z0-9+.-]*)://[^\s/@]+:[^\s/@]+@#';
+    private const URL_CREDS_RE = '#\b([a-zA-Z][a-zA-Z0-9+.-]{0,31})://[^\s/@:]+:[^\s/@]+@#';
 
-    /** Key-name denylist (REA-474): see packages/errors-js/scrub.ts's
+    /** Key-name denylist (REA-474): see errors-js/scrub.ts's
      * module doc for the full rationale. Matched against whole camelCase/
      * snake_case segments (and contiguous joins of them) so "tokenizer"
      * and "authentic" never match "token" / "auth". */

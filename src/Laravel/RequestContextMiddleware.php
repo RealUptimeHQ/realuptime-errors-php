@@ -14,7 +14,7 @@ use RealUptime\Errors\Client;
  * from CapturingExceptionHandler or a manual captureException() call)
  * carries request context, the same "route rides, headers/cookies/body
  * never do" contract the JS Express adapter documents in
- * packages/errors-js/adapters/express.md.
+ * errors-js/adapters/express.md.
  *
  * Registered as a global middleware (see README) so it runs for every
  * request without per-route opt-in; it does no I/O of its own and never

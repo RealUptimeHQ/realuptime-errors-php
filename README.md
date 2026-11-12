@@ -4,7 +4,7 @@ Error tracking SDK for PHP and Laravel, zero runtime dependencies beyond
 `ext-json` and `ext-curl`: part of
 [RealUptime Errors](https://realuptime.io/error-tracking).
 
-This is a **mirror**. It is published from `packages/errors-php` in the
+This is a **mirror**. It is published from `errors-php` in the
 [realuptime monorepo](https://github.com/RealUptimeHQ/realuptime) by
 `scripts/publish-sdk-mirrors.mjs` and is not edited directly; open issues
 and PRs against this repo, but expect source changes to land here after
@@ -12,7 +12,7 @@ they merge upstream.
 
 ## Install
 
-Installs straight from GitHub today. npm, PyPI, RubyGems, and Packagist packages are coming; this note disappears the day they ship.
+Installs straight from GitHub today. Packagist has this package registered but no tagged release yet; this note disappears the day one ships.
 
 ```bash
 composer require realuptime/errors:dev-main (add {"type": "vcs", "url": "https://github.com/RealUptimeHQ/realuptime-errors-php"} to "repositories" first)
