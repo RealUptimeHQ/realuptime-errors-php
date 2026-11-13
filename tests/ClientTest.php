@@ -118,7 +118,8 @@ final class ClientTest extends TestCase
     {
         $transport = new Transport('https://example.test/ingest', httpPost: function (): array {
             throw new \RuntimeException('network down');
-        }, log: static function (): void {});
+        }, log: static function (): void {
+        });
         $client = new Client(dsn: 'https://example.test/ingest', transport: $transport);
 
         try {

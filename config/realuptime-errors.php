@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 /**
  * Laravel config for the realuptime Errors SDK. Publish with:
  *
@@ -11,6 +9,9 @@ declare(strict_types=1);
  * entirely, every key below reads from the environment with a safe
  * default.
  */
+
+declare(strict_types=1);
+
 return [
     /** The per-project ingest key/URL from the realuptime Errors dashboard.
      * Empty disables the SDK entirely (no DSN, no requests, no errors). */

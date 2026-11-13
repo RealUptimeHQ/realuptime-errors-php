@@ -86,7 +86,8 @@ final class ErrorsServiceProviderTest extends TestCase
                 $sent[] = json_decode($body, true);
                 return ['status' => 200, 'body' => '{"accepted":1,"droppedOverQuota":0,"overQuota":false}'];
             },
-            log: static function (): void {},
+            log: static function (): void {
+            },
         ));
 
         $handler = $app->make(ExceptionHandlerContract::class);

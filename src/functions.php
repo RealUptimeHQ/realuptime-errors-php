@@ -1,9 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace RealUptime\Errors;
-
 /**
  * Plain-PHP helper: installs a global exception handler that reports
  * uncaught exceptions to the process-wide Client singleton, then chains to
@@ -23,6 +19,10 @@ namespace RealUptime\Errors;
  * handler is caught so this helper is never the thing that turns a
  * reportable error into an unreportable fatal.
  */
+
+declare(strict_types=1);
+
+namespace RealUptime\Errors;
 
 /** @var (callable(\Throwable): void)|null */
 $GLOBALS['__realuptime_errors_previous_handler'] = null;

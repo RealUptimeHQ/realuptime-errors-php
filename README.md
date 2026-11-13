@@ -69,6 +69,15 @@ middleware, and the queue `JobFailed` hook).
 This mirror tracks SDK_VERSION `0.1.0` in `src/WireContract.php`, the
 string every event actually carries on the wire.
 
+## Running the tests
+
+The suite is in `tests/` (PHPUnit, installed by Composer as a dev dependency):
+
+```bash
+composer install
+vendor/bin/phpunit
+```
+
 ## License
 
 MIT, see [LICENSE](./LICENSE).
