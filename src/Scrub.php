@@ -51,7 +51,16 @@ final class Scrub
     private const KEY_DENYLIST = [
         'password', 'passwd', 'secret', 'token', 'apikey', 'auth', 'authorization',
         'credential', 'credentials', 'privatekey', 'accesskey', 'session',
+        // REA-1260: names that carry credentials in query strings and form text.
+        'pw', 'pwd', 'passphrase', 'sig', 'signature', 'sid', 'otp',
     ];
+
+    /** name=value pairs (REA-1260): the value is scrubbed when the name hits
+     * KEY_DENYLIST. The value class spells out JavaScript's \s (so /u);
+     * KEY_VALUE_BYTES_RE is the same rule for input that is not valid UTF-8,
+     * ending values at ASCII whitespace only. */
+    private const KEY_VALUE_RE = '/([A-Za-z0-9_.\[\]-]{1,64})=([^&#;,"\'<>\t\n\x{0B}\f\r \x{A0}\x{1680}\x{2000}-\x{200A}\x{2028}\x{2029}\x{202F}\x{205F}\x{3000}\x{FEFF}]+)/u';
+    private const KEY_VALUE_BYTES_RE = '/([A-Za-z0-9_.\[\]-]{1,64})=([^&#;,"\'<>\t\n\x0B\f\r ]+)/';
 
     private function __construct()
     {
@@ -120,7 +129,14 @@ final class Scrub
         }, $out);
         $out = (string) preg_replace(self::HEX_RE, self::SCRUBBED, $out);
         $out = (string) preg_replace(self::BASE64_RE, self::SCRUBBED, $out);
-        return $out;
+        $pair = static function (array $m): string {
+            return self::isKeyDenylisted($m[1]) ? $m[1] . '=' . self::SCRUBBED : $m[0];
+        };
+        $keyed = preg_replace_callback(self::KEY_VALUE_RE, $pair, $out);
+        if ($keyed === null) {
+            $keyed = preg_replace_callback(self::KEY_VALUE_BYTES_RE, $pair, $out);
+        }
+        return (string) $keyed;
     }
 
     /** A flat string map (tags, custom context, device, frame locals): a
