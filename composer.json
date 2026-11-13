@@ -2,7 +2,7 @@
     "name": "realuptime/errors",
     "description": "RealUptime Errors: minimal PHP/Laravel application error tracking SDK. Zero runtime dependencies beyond ext-json and ext-curl.",
     "type": "library",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "license": "MIT",
     "keywords": [
         "error-tracking",

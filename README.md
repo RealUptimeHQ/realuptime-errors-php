@@ -66,7 +66,7 @@ middleware, and the queue `JobFailed` hook).
 
 ## Version
 
-This mirror tracks SDK_VERSION `0.1.0` in `src/WireContract.php`, the
+This mirror tracks SDK_VERSION `0.1.1` in `src/WireContract.php`, the
 string every event actually carries on the wire.
 
 ## Running the tests

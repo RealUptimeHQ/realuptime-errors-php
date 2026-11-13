@@ -15,7 +15,7 @@ namespace RealUptime\Errors;
 final class WireContract
 {
     public const SDK_NAME = 'realuptime-errors-php';
-    public const SDK_VERSION = '0.1.0'; // x-release-please-version
+    public const SDK_VERSION = '0.1.1'; // x-release-please-version
 
     public const MAX_EVENTS_PER_BATCH = 50;
     public const MAX_MESSAGE_LENGTH = 4000;
